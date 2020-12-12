@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/white">
+    android:theme="@style/ThemeOverlay.AppCompat.Light">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -306,7 +306,7 @@
                         android:layout_column="2"/>
                     <TextView
                         android:id="@+id/t_avg_inf_time"
-                        android:text="Avg Inf. Time"
+                        android:text="Inf. Time"
                         android:textStyle="bold"
                         android:background="@drawable/border"
                         android:padding="3dp"
