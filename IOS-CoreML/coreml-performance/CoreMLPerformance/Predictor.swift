@@ -2,8 +2,7 @@
 //  Predictor.swift
 //  CoreMLPerformance
 //
-//  Created by Vladimir Chernykh on 15.05.2020.
-//  Copyright © 2020 Vladimir Chernykh. All rights reserved.
+//  Created by Mohit Nihalani
 //
 
 import CoreML
