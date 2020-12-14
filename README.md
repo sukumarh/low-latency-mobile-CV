@@ -1,4 +1,6 @@
 # Low Latency Deep Learning on Smartphones
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
 In this project, we empirically evaluate the performance of two mobile DL frameworks TensorFlow Lite and CoreML , on the inference performance on Android and iOS devices, respectively, using various Convolution Neural Network Architectures.
 
 ## Frameworks
