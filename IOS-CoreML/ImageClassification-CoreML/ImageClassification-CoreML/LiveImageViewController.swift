@@ -81,7 +81,7 @@ class LiveImageViewController: UIViewController {
     }
     
     
-    // MARK: - 초기 세팅
+    // MARK: 
     
     func setUpCamera() {
         videoCapture = VideoCapture()
@@ -115,8 +115,6 @@ class LiveImageViewController: UIViewController {
 extension LiveImageViewController: VideoCaptureDelegate {
     func videoCapture(_ capture: VideoCapture, didCaptureVideoFrame pixelBuffer: CVPixelBuffer?/*, timestamp: CMTime*/) {
         
-        // 카메라에서 캡쳐된 화면은 pixelBuffer에 담김.
-        // Vision 프레임워크에서는 이미지 대신 pixelBuffer를 바로 사용 가능
         if let pixelBuffer = pixelBuffer {
             // start of measure
             self.👨‍🔧.🎬👏()
@@ -141,7 +139,7 @@ extension LiveImageViewController {
         // middle of measure
         self.👨‍🔧.🏷(with: "endInference")
         
-        // 메인큐에서 결과 출력
+
         if let classificationResults = request.results as? [VNClassificationObservation] {
             showClassificationResult(results: classificationResults)
         } else if let mlFeatureValueResults = request.results as? [VNCoreMLFeatureValueObservation] {
