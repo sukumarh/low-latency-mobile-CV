@@ -21,7 +21,7 @@ In this project, we empirically evaluate the performance of two mobile DL framew
     ![MobileNet V2, CPU](/Evaluation_Results/TF_Lite_Metrics/CPU/MobileNetV2_CPU_4.png)
     
     ###### 8 Threads
-    ![MobileNet V2, CPU](/Evaluation_Results/TF_Lite_Metrics/CPU/MobileNetV2_CPU_8.png)|
+    ![MobileNet V2, CPU](/Evaluation_Results/TF_Lite_Metrics/CPU/MobileNetV2_CPU_8.png)
 
     ##### MobileNet V2 using GPU delegate
     ![MobileNet V2, CPU](/Evaluation_Results/TF_Lite_Metrics/CPU/MobileNetV2_GPU.png)
