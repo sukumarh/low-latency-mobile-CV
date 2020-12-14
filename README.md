@@ -16,13 +16,10 @@ In this project, we empirically evaluate the performance of two mobile DL framew
 ### CPU
 - #### TensorFlow Lite
     These metrics were recorded using Android Studio CPU Profiler.
+    | **MobileNet V2 on CPU with 4 threads (no delegates)** | **MobileNet V2 on CPU with 8 threads (no delegates)** |
+    |------------------|----------------------------|
+    |![MobileNet V2, CPU](/Evaluation_Results/TF_Lite_Metrics/CPU/MobileNetV2_CPU_4.png) | ![MobileNet V2, CPU](/Evaluation_Results/TF_Lite_Metrics/CPU/MobileNetV2_CPU_8.png)|
 
-    ##### MobileNet V2 on CPU with 4 threads (no delegates)
-    ![MobileNet V2, CPU](/Evaluation_Results/TF_Lite_Metrics/CPU/MobileNetV2_CPU_4.png)
-    
-    ##### MobileNet V2 on CPU with 8 threads (no delegates)
-    ![MobileNet V2, CPU](/Evaluation_Results/TF_Lite_Metrics/CPU/MobileNetV2_CPU_8.png)
-    
     ##### MobileNet V2 using GPU delegate
     ![MobileNet V2, CPU](/Evaluation_Results/TF_Lite_Metrics/CPU/MobileNetV2_GPU.png)
     
