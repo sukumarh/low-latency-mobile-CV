@@ -84,7 +84,7 @@ In this project, we empirically evaluate the performance of two mobile DL framew
 ## Evaluation Results
 | **Size vs Accuracy** | **Inference Time vs Accuracy** |
 |------------------|----------------------------|
-|![Size vs Accuracy](/Evaluation_Results/Framework_Evaluation/Size_vs_Accuracy.png)| ![Inference Time vs Accuracy](/Evaluation_Results/Framework_Evaluation/InferenceTime_vs_Accuracy.png)   |
+|![Size vs Accuracy](/Evaluation_Results/Framework_Evaluation/Size_vs_Accuracy.jpg)| ![Inference Time vs Accuracy](/Evaluation_Results/Framework_Evaluation/InferenceTime_vs_Accuracy.jpg)   |
 
 ## Environments
 1. [Xcode](https://developer.apple.com/xcode/ide/)
