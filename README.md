@@ -43,7 +43,11 @@ In this project, we empirically evaluate the performance of two mobile DL framew
     
     ##### MobileNet V2 using NNAPI delegate
     ![MobileNet V2, CPU](/Evaluation_Results/TF_Lite_Metrics/CPU/MobileNetV2_NNAPI.png)
-    
+
+- #### CoreML
+    Metrics are recorded in three different scenarios
+    ![ios-cpu-utilization](/Evaluation_Results/CoreML/cpu-utlization.png)
+
 ### GPU
 - #### TensorFlow Lite
     These metrics were recorded using Qualcomm Snapdragon Profiler.
@@ -57,6 +61,23 @@ In this project, we empirically evaluate the performance of two mobile DL framew
     ##### MobileNet V2 using NNAPI delegate
     ![MobileNet V2, CPU](/Evaluation_Results/TF_Lite_Metrics/GPU/MobileNetV2_NNAPI.png)
 
+### Throughput
+- #### CoreML
+    ![MobileNet V2, CPU](/Evaluation_Results/CoreML/Throughput.png)
+
+### Memory
+- #### CoreML
+    ![MobileNet V2, CPU](/Evaluation_Results/CoreML/memory.png)
+
+### FPS
+    For evluation purposes Frames Per second, captured in real time video is restriced to 50, following is the FPS processed by the model in real time.
+- #### CoreML
+    ![MobileNet V2, CPU](/Evaluation_Results/CoreML/FPS.png)
+
+
+### Impact of quantization on accuracy
+    -#### CoreML
+    ![MobileNet V2, CPU](/Evaluation_Results/CoreML/acc.png)
 
 ## Evaluation Results
 | **Size vs Accuracy** | **Inference Time vs Accuracy** |
