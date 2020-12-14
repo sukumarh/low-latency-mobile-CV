@@ -86,6 +86,12 @@ For evluation purposes Frames Per second, captured in real time video is restric
 |------------------|----------------------------|
 |![Size vs Accuracy](/Evaluation_Results/Framework_Evaluation/Size_vs_Accuracy.jpg)| ![Inference Time vs Accuracy](/Evaluation_Results/Framework_Evaluation/InferenceTime_vs_Accuracy.jpg)   |
 
+## Key Points:
+- The same AI model on different platform has different accuracy.
+- On-board computation device (CPU, GPU) selection is highly dependent on the mobile device.
+- Neural network optimized capabilities such as ANE (CoreML, iOS) and NNAPI (TFLite, Android) are not always the best choice for inferencing.
+- There is a substantial trade-off between accuracy and throughput. This trade-off must be addressed as per the application requirements.
+
 ## Environments
 1. [Xcode](https://developer.apple.com/xcode/ide/)
 2. [Android Studio](https://developer.android.com/studio)
