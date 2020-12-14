@@ -78,7 +78,7 @@ In this project, we empirically evaluate the performance of two mobile DL framew
 
 
 ### Impact of quantization on accuracy
-    -#### CoreML
+- #### CoreML
     ![MobileNet V2, CPU](Evaluation_Results/CoreMl/acc.png)
 
 ## Evaluation Results
