@@ -5,12 +5,27 @@ In this project, we empirically evaluate the performance of two mobile DL framew
 1. [TensorFlow Lite](https://www.tensorflow.org/lite) (for Android)
 2. [CoreML](https://developer.apple.com/documentation/coreml) (for iOS)
 
-## On-board devices and API Support:
+## On-board devices and API Support
 1. CPU:
     - [XNNPack Optimized](https://blog.tensorflow.org/2020/07/accelerating-tensorflow-lite-xnnpack-integration.html) [TF Lite, Android]
 2. GPU
 3. Apple Neural Network (ANE) [CoreML, iOS]
 4. [Neural Network API](https://www.tensorflow.org/lite/performance/nnapi) (NNAPI) [TF Lite, Android]
+
+## Usage
+### TFLite Performance
+1. In Android Studio, use the *Open an Existing Project* option and select the `Android-TFLite\TFLitePerformance` folder.
+2. If you wish to use a custom TF-Lite model, copy the `.tflite` file to the `app\assets` folder. Also, update the path in the model's classifier java file (like *ClassifierSqueezeNet.java*), in the lib_support library. The path is present in the `getModelPath` function.
+3. Use the **Device File Explorer** to upload the test data onto the device. Default location of data is `/data/local/tmp/DataSet/`. This can be modified by updating the following line of code at *line 114* in the *MainActivity.java*.
+   ```Java
+   File dataset_folder = new File(<Dataset location on device>);
+   ```
+4. Build the project using `Build > Make Project`.
+5. Run the application on device/emulator using `Run > Run 'app'`.
+6. If you wish to start profiling with application launch, use `Run > Profile 'app'` instead.
+7. On Device/Emulator, ensure the correct model and device is selected. 
+8. Click the `Benchmark` button on the mobile application to initiate the inferencing.
+
 
 ## Benchmark Metrics
 ### CPU
