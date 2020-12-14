@@ -11,7 +11,7 @@ In this project, we empirically evaluate the performance of two mobile DL framew
 1. CPU:
     - [XNNPack Optimized](https://blog.tensorflow.org/2020/07/accelerating-tensorflow-lite-xnnpack-integration.html) [TF Lite, Android]
 2. GPU
-3. Apple Neural Network (ANE) [CoreML, iOS]
+3. Apple Neural Engine (ANE) [CoreML, iOS]
 4. [Neural Network API](https://www.tensorflow.org/lite/performance/nnapi) (NNAPI) [TF Lite, Android]
 
 ## Usage
