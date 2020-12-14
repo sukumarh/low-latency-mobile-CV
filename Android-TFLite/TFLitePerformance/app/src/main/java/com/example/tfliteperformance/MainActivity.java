@@ -177,9 +177,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         correct++;
                     }
 
-                    accuracy = (double)correct * 100 / i + 1;
+                    accuracy = (double)correct * 100 / (i + 1);
 
-                    // inference_timings.add(result.runtime);
                     total_time += result.runtime;
                     avg_inference_time = total_time / i + 1;
 
@@ -202,7 +201,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             setProgressBar(progress[0].intValue());
             setProgressBarValue(progress[0].intValue() + "/" + progress[1].intValue());
             setAccuracy(format("%.2f", progress[2]) + "%");
-            setInferenceTime(format("%.2f", progress[3]) + "ms");
+            setInferenceTime(formatTime(progress[3]));
             setTotalTime(formatTime(progress[4]));
         }
 
@@ -217,20 +216,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @SuppressLint("DefaultLocale")
     private String formatTime(double time_) {
-        int total_time_mins = 0, total_time_seconds = 0, total_time_ms = 0;
+        int time_mins = 0, time_seconds = 0, time_ms = 0;
         if (time_ > 1000) {
-            total_time_seconds = ((int) Math.floor(time_ / 1000));
-            total_time_ms = (int) (time_ % 1000);
-            if (total_time_seconds > 60) {
-                total_time_mins = ((int) Math.floor(total_time_seconds / 60));
-                total_time_seconds = total_time_seconds % 60;
-                return format("%dmins %2ds %3dms",
-                        total_time_mins,
-                        total_time_seconds,
-                        total_time_ms);
+            time_seconds = ((int) Math.floor(time_ / 1000));
+            time_ms = (int) (time_ % 1000);
+            if (time_seconds > 60) {
+                time_mins = ((int) Math.floor(time_seconds / 60));
+                time_seconds = time_seconds % 60;
+                return format("%dmin %2ds %3dms",
+                        time_mins,
+                        time_seconds,
+                        time_ms);
             }
             else {
-                return format("%ds %3dms", total_time_seconds, total_time_ms);
+                return format("%ds %3dms", time_seconds, time_ms);
             }
         }
         else {
@@ -243,7 +242,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         TextView tv = new TextView(this);
         tv.setText(text);
         tv.setBackground(ContextCompat.getDrawable(this, R.drawable.border));
-        tv.setPadding(3,3,3,3);
+        tv.setPadding(5,10,3,3);
         tv.setLayoutParams(new TableRow.LayoutParams(layout_column));
         tv.setTextColor(R.color.black);
         return tv;
@@ -260,11 +259,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         model_ = model_.substring(0, 1).toUpperCase() + model_.substring(1).toLowerCase();
         TextView tv_model = createTextView(model_, 0);
         TextView tv_device = createTextView(device.name(), 1);
-        TextView tv_num_threads = createTextView(numThreads + "", 2);
-        TextView tv_avg_inf_time =
-                createTextView(format("%.2f", avg_inf_time) + "ms", 3);
+        TextView tv_num_threads = createTextView(device == Device.CPU ? numThreads + "" : "N/A",
+                2);
+        TextView tv_avg_inf_time = createTextView(format("%.2f", avg_inf_time) + "ms",
+                3);
         TextView tv_total_time = createTextView(formatTime(total_time), 4);
-        TextView tv_accuracy = createTextView(format("%.2f", accuracy) + "%", 5);
+        TextView tv_accuracy = createTextView(format("%.2f", accuracy) + "%",
+                5);
 
         tr.addView(tv_model);
         tr.addView(tv_device);

@@ -32,7 +32,6 @@ import java.util.Map;
 import java.util.PriorityQueue;
 import org.tensorflow.lite.DataType;
 import org.tensorflow.lite.Interpreter;
-import org.tensorflow.lite.examples.classification.tflite.Classifier.Device;
 import org.tensorflow.lite.gpu.GpuDelegate;
 import org.tensorflow.lite.nnapi.NnApiDelegate;
 import org.tensorflow.lite.support.common.FileUtil;
@@ -53,6 +52,10 @@ public abstract class Classifier {
 
   /** The model type used for classification. */
   public enum Model {
+    MOBILENET_V2,
+    SQUEEZENET,
+    RESNET50_V2,
+    RESNET101_V2,
     FLOAT_MOBILENET,
     QUANTIZED_MOBILENET,
     FLOAT_EFFICIENTNET,
@@ -75,7 +78,7 @@ public abstract class Classifier {
   private final int imageSizeX;
 
   /** Image size along the y axis. */
-  private final int imageSizeY;
+  private int imageSizeY;
 
   /** Optional GPU delegate for accleration. */
   private GpuDelegate gpuDelegate = null;
@@ -112,7 +115,15 @@ public abstract class Classifier {
    */
   public static Classifier create(Activity activity, Model model, Device device, int numThreads)
       throws IOException {
-    if (model == Model.QUANTIZED_MOBILENET) {
+    if (model == Model.MOBILENET_V2) {
+      return new ClassifierMobileNetV2(activity, device, numThreads);
+    } else if (model == Model.SQUEEZENET) {
+      return new ClassifierSqueezeNet(activity, device, numThreads);
+    } else if (model == Model.RESNET50_V2) {
+      return new ClassifierResNet50_V2(activity, device, numThreads);
+    } else if (model == Model.RESNET101_V2){
+      return new ClassifierResNet101_V2(activity, device, numThreads);
+    } else if (model == Model.QUANTIZED_MOBILENET) {
       return new ClassifierQuantizedMobileNet(activity, device, numThreads);
     } else if (model == Model.FLOAT_MOBILENET) {
       return new ClassifierFloatMobileNet(activity, device, numThreads);
@@ -225,7 +236,7 @@ public abstract class Classifier {
     DataType imageDataType = tflite.getInputTensor(imageTensorIndex).dataType();
     int probabilityTensorIndex = 0;
     int[] probabilityShape =
-        tflite.getOutputTensor(probabilityTensorIndex).shape(); // {1, NUM_CLASSES}
+            tflite.getOutputTensor(probabilityTensorIndex).shape(); // {1, NUM_CLASSES}
     DataType probabilityDataType = tflite.getOutputTensor(probabilityTensorIndex).dataType();
 
     // Creates the input tensor.
@@ -240,7 +251,7 @@ public abstract class Classifier {
     Log.d(TAG, "Created a Tensorflow Lite Image Classifier.");
   }
 
-  public static class Result {
+    public static class Result {
 
     public final List<Recognition> recognitions;
 
@@ -326,6 +337,7 @@ public abstract class Classifier {
             // To get the same inference results as lib_task_api, which is built on top of the Task
             // Library, use ResizeMethod.BILINEAR.
             .add(new ResizeOp(imageSizeX, imageSizeY, ResizeMethod.NEAREST_NEIGHBOR))
+            //.add(new ResizeOp(imageSizeX, imageSizeY, ResizeMethod.BILINEAR))
             .add(new Rot90Op(numRotation))
             .add(getPreprocessNormalizeOp())
             .build();

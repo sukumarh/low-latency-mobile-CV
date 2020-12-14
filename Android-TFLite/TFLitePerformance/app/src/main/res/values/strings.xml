@@ -4,6 +4,10 @@
     <string name="tfe_ic_gpu_quant_error" translation_description="Error regarding GPU support for Quant models[CHAR_LIMIT=60]">GPU does not yet supported quantized models.</string>
     <string name="tfe_ic_model" translatable="false">Model:</string>
     <string-array name="tfe_ic_models" translatable="false">
+        <item>MobileNet_V2</item>
+        <item>SqueezeNet</item>
+        <item>ResNet50_V2</item>
+        <item>ResNet101_V2</item>
         <item>Quantized_EfficientNet</item>
         <item>Float_EfficientNet</item>
         <item>Quantized_MobileNet</item>
@@ -16,10 +20,4 @@
         <item>GPU</item>
         <item>NNAPI</item>
     </string-array>
-    <string-array name="array_name">
-        <item>Array Item One</item>
-        <item>Array Item Two</item>
-        <item>Array Item Three</item>
-    </string-array>
-
 </resources>
