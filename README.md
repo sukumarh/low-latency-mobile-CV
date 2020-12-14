@@ -48,7 +48,7 @@ In this project, we empirically evaluate the performance of two mobile DL framew
 
 - #### CoreML
     Metrics are recorded in three different scenarios
-    ![ios-cpu-utilization](/Evaluation_Results/coreml/cpu-utlization.png)
+    ![ios-cpu-utilization](/Evaluation_Results/CoreMl/cpu-utlization.png)
 
 ### GPU
 - #### TensorFlow Lite
@@ -65,21 +65,21 @@ In this project, we empirically evaluate the performance of two mobile DL framew
 
 ### Throughput
 - #### CoreML
-    ![MobileNet V2, CPU](/Evaluation_Results/coreml/Throughput.png)
+    ![MobileNet V2, CPU](/Evaluation_Results/CoreMl/Throughput.png)
 
 ### Memory
 - #### CoreML
-    ![MobileNet V2, CPU](/Evaluation_Results/coreml/memory.png)
+    ![MobileNet V2, CPU](/Evaluation_Results/CoreMl/memory.png)
 
 ### FPS
     For evluation purposes Frames Per second, captured in real time video is restriced to 50, following is the FPS processed by the model in real time.
 - #### CoreML
-    ![MobileNet V2, CPU](/Evaluation_Results/coreml/FPS.png)
+    ![MobileNet V2, CPU](/Evaluation_Results/CoreMl/FPS.png)
 
 
 ### Impact of quantization on accuracy
     -#### CoreML
-    ![MobileNet V2, CPU](/Evaluation_Results/coreml/acc.png)
+    ![MobileNet V2, CPU](/Evaluation_Results/CoreMl/acc.png)
 
 ## Evaluation Results
 | **Size vs Accuracy** | **Inference Time vs Accuracy** |
