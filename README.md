@@ -72,7 +72,7 @@ In this project, we empirically evaluate the performance of two mobile DL framew
     ![MobileNet V2, CPU](Evaluation_Results/CoreMl/memory.png)
 
 ### FPS
-    For evluation purposes Frames Per second, captured in real time video is restriced to 50, following is the FPS processed by the model in real time.
+For evluation purposes Frames Per second, captured in real time video is restriced to 50, following is the FPS processed by the model in real time.
 - #### CoreML
     ![MobileNet V2, CPU](Evaluation_Results/CoreMl/FPS.png)
 
